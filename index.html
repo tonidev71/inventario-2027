@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario 2026</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="overlay">
+
+    <!-- 🔷 LOGO ARRIBA IZQUIERDA -->
+    <div class="t">
+      <img src="img/LOGO-TONIDEV71.png" alt="Logo TONIDEV71" class="logo">
+    </div>
+
+    <!-- 🔐 LOGIN / REGISTRO -->
+    <div id="login" class="login-container">
+
+      <h1>Inventario 2026</h1>
+
+      <form id="authForm">
+        <label for="usuario">Usuario</label>
+        <input id="usuario" type="text" class="uppercase" autocomplete="username" placeholder="Ej. TONI">
+
+        <label for="password">Contraseña</label>
+        <div class="password-wrapper">
+          <input id="password" type="password" autocomplete="current-password" placeholder="Mínimo 4 caracteres">
+          <button type="button" id="togglePassword" class="toggle-password" aria-label="Mostrar u ocultar contraseña" title="Mostrar/ocultar contraseña">👁️</button>
+        </div>
+
+        <button id="loginBtn" type="submit">Entrar</button>
+        <button id="registerBtn" type="button" class="register">Registrarse</button>
+
+        <button type="button" id="forgotBtn" class="link-btn">¿No te acuerdas de la contraseña?</button>
+
+        <p id="mensajeAuth" class="mensaje-auth" aria-live="polite"></p>
+      </form>
+
+      <!-- 🔑 RECUPERAR / CAMBIAR CONTRASEÑA -->
+      <div id="resetBox" class="reset-box">
+        <h3>Restablecer contraseña</h3>
+
+        <label for="resetUsuario">Usuario registrado</label>
+        <input id="resetUsuario" type="text" class="uppercase" placeholder="Tu usuario">
+
+        <label for="resetPassword">Nueva contraseña</label>
+        <div class="password-wrapper">
+          <input id="resetPassword" type="password" placeholder="Nueva contraseña (mín. 4)">
+          <button type="button" id="toggleResetPassword" class="toggle-password" aria-label="Mostrar u ocultar nueva contraseña" title="Mostrar/ocultar contraseña">👁️</button>
+        </div>
+
+        <button type="button" id="saveResetBtn" class="btn-reset-save">Guardar nueva contraseña</button>
+        <button type="button" id="clearUsersBtn" class="btn-reset-clear">Borrar todos los usuarios y empezar de cero</button>
+        <button type="button" id="cancelResetBtn" class="link-btn">Volver al inicio de sesión</button>
+      </div>
+
+    </div>
+
+    <!-- 📋 PANEL PRINCIPAL -->
+    <div id="panel" class="panel-container">
+
+      <!-- 🔷 CABECERA PANEL -->
+      <div class="panel-header">
+        <div>
+          <h2>TABLA INVENTARIO</h2>
+          <p id="usuarioInfo" class="usuario-info"></p>
+        </div>
+
+        <!-- 🕒 Reloj y Fecha -->
+        <div class="reloj-box">
+          <h2 id="reloj"></h2>
+          <p id="fecha"></p>
+        </div>
+
+        <button id="logoutBtn" type="button">Cerrar sesión</button>
+      </div>
+
+      <!-- 📊 TABLA INVENTARIO -->
+      <div class="tabla-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Proveedor</th>
+              <th>Producto</th>
+              <th>Entradas</th>
+              <th>Salidas</th>
+              <th class="stock">Stock</th>
+              <th>Pallets Entrada</th>
+              <th>Pallets Salida</th>
+              <th class="stock-pallet">Stock Pallets</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+
+          <tbody id="tabla"></tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
